@@ -11,17 +11,13 @@
 /* ===== CUSTOM FONTS (Forte & Bradley Hand ITC) ===== */
 @font-face {
   font-family: 'Forte';
-  /* Replace these URLs with the actual paths to your .woff2 or .ttf files */
-  src: url('Forte.woff2') format('woff2'),
-       url('Forte.ttf') format('truetype');
+  src: url('Forte.woff2') format('woff2'), url('Forte.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'Bradley Hand ITC';
-  src: url('BradleyHandITC.woff2') format('woff2'),
-       url('BradleyHandITC.ttf') format('truetype');
+  src: url('BradleyHandITC.woff2') format('woff2'), url('BradleyHandITC.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -47,9 +43,9 @@ html{scroll-behavior:smooth;}
 body{
   background:var(--navy);
   color:var(--text);
-  /* Main text uses Bradley Hand ITC & Forte, with Inter as fallback */
   font-family: 'Bradley Hand ITC', 'Forte', 'Inter', sans-serif;
   overflow-x:hidden;
+  font-size: 1.1rem; /* INCREASED BASE TEXT SIZE */
 }
 
 ::-webkit-scrollbar{width:6px;}
@@ -58,9 +54,9 @@ body{
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(10,22,40,0.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(30,52,92,0.5);}
-.nav-logo{font-family:'Forte', 'Bradley Hand ITC', 'Space Grotesk', sans-serif;font-weight:700;font-size:1.4rem;background:linear-gradient(135deg, var(--blue-sky), var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.nav-logo{font-family:'Forte', 'Bradley Hand ITC', 'Space Grotesk', sans-serif;font-weight:700;font-size:1.6rem;background:linear-gradient(135deg, var(--blue-sky), var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .nav-links{display:flex;gap:32px;list-style:none;}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;transition:color 0.25s;position:relative;font-family: 'Bradley Hand ITC', 'Forte', 'Inter', sans-serif;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.95rem;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;transition:color 0.25s;position:relative;font-family: 'Bradley Hand ITC', 'Forte', 'Inter', sans-serif;}
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--blue-sky),var(--orange));transition:width 0.3s;}
 .nav-links a:hover{color:var(--text);}
 .nav-links a:hover::after{width:100%;}
@@ -71,16 +67,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 48px;display:fl
 #pcbCanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
 .hero-content{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1100px;width:100%;}
 .hero-text{opacity:0;animation:fadeUp 0.8s 0.2s forwards;}
-.hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--orange);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.9rem;color:var(--orange);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
 .hero-eyebrow::before{content:'';width:28px;height:1.5px;background:var(--orange);}
-.hero-name{font-family:'Forte', 'Bradley Hand ITC', 'Space Grotesk', sans-serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:700;line-height:1.08;margin-bottom:18px;}
+.hero-name{font-family:'Forte', 'Bradley Hand ITC', 'Space Grotesk', sans-serif;font-size:clamp(3.2rem,5vw,4.5rem);font-weight:700;line-height:1.08;margin-bottom:18px;}
 .hero-name span{background:linear-gradient(135deg, var(--blue-sky), var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.hero-title{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:32px;}
+.hero-title{font-size:1.2rem;color:var(--muted);line-height:1.8;margin-bottom:32px;}
 .hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px;}
-.tag{padding:6px 16px;border:1px solid var(--border);border-radius:20px;font-size:0.75rem;font-family:'JetBrains Mono',monospace;color:var(--muted);transition:all 0.25s;}
+.tag{padding:8px 20px;border:1px solid var(--border);border-radius:20px;font-size:0.85rem;font-family:'JetBrains Mono',monospace;color:var(--muted);transition:all 0.25s;}
 .tag:hover{border-color:var(--blue-sky);color:var(--blue-sky);box-shadow:0 0 20px rgba(59,130,246,0.25);}
 .hero-ctas{display:flex;gap:14px;}
-.btn{padding:13px 30px;border-radius:8px;font-size:0.88rem;font-weight:600;text-decoration:none;transition:all 0.25s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px;font-family: 'Bradley Hand ITC', 'Forte', 'Inter', sans-serif;}
+.btn{padding:14px 32px;border-radius:8px;font-size:1rem;font-weight:600;text-decoration:none;transition:all 0.25s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px;font-family: 'Bradley Hand ITC', 'Forte', 'Inter', sans-serif;}
 .btn-primary{background:linear-gradient(135deg, var(--orange), var(--orange2));color:var(--navy);box-shadow:0 4px 20px rgba(245,158,11,0.3);}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(245,158,11,0.4);}
 .btn-secondary{background:transparent;color:var(--blue-sky);border:1.5px solid var(--blue-sky);}
@@ -96,21 +92,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 48px;display:fl
 .photo-carousel .slide.active{opacity:1;}
 .photo-dots{position:absolute;top:-8px;left:50%;transform:translateX(-50%);width:12px;height:12px;border-radius:50%;background:var(--orange);box-shadow:0 0 12px var(--orange);}
 
+/* ANIMATED SECTION DECORATIONS */
+.section-decoration{margin-bottom: 20px; display:flex; justify-content:flex-start; align-items:center; height:10px; gap:15px;}
+.section-decoration .pulse-dot{width:10px;height:10px;border-radius:50%;background:var(--blue-sky);animation:pulseGlow 1.8s ease-in-out infinite;}
+.section-decoration .pulse-dot.green{background:var(--green);animation-delay:0.3s;}
+.section-decoration .pulse-dot.orange{background:var(--orange);animation-delay:0.6s;}
+.section-decoration .line{height:2px;width:60px;background:linear-gradient(90deg, var(--blue-sky), transparent);}
+
 /* SECTIONS */
-section{padding:100px 48px;max-width:1100px;margin:0 auto;}
-.section-label{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--blue-sky);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;}
-.section-title{font-family:'Forte', 'Bradley Hand ITC', 'Space Grotesk', sans-serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;margin-bottom:48px;position:relative;padding-bottom:20px;}
-.section-title::after{content:'';position:absolute;bottom:0;left:0;width:48px;height:3px;background:linear-gradient(90deg,var(--blue-sky),var(--orange));border-radius:2px;}
+section{padding:120px 48px;max-width:1100px;margin:0 auto;}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:var(--blue-sky);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;}
+.section-title{font-family:'Forte', 'Bradley Hand ITC', 'Space Grotesk', sans-serif;font-size:clamp(2.2rem,3.5vw,2.8rem);font-weight:700;margin-bottom:48px;position:relative;padding-bottom:20px;}
+.section-title::after{content:'';position:absolute;bottom:0;left:0;width:60px;height:3px;background:linear-gradient(90deg,var(--blue-sky),var(--orange));border-radius:2px;}
 
 /* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
-.about-text p{color:var(--muted);line-height:1.8;margin-bottom:16px;font-size:0.95rem;}
+.about-text p{color:var(--muted);line-height:1.8;margin-bottom:16px;font-size:1.05rem;}
 .about-text p strong{color:var(--text);}
 .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
 .stat-card{background:var(--slate);border:1px solid var(--border);border-radius:10px;padding:24px;transition:all 0.3s;}
 .stat-card:hover{border-color:var(--orange);transform:translateY(-4px);box-shadow:0 0 20px rgba(245,158,11,0.1);}
-.stat-number{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:var(--orange);line-height:1;}
-.stat-label{font-size:0.8rem;color:var(--muted);margin-top:6px;}
+.stat-number{font-family:'Space Grotesk',sans-serif;font-size:2.4rem;font-weight:700;color:var(--orange);line-height:1;}
+.stat-label{font-size:0.9rem;color:var(--muted);margin-top:6px;}
 
 /* SKILLS */
 .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
@@ -118,66 +121,66 @@ section{padding:100px 48px;max-width:1100px;margin:0 auto;}
 .skill-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue-sky),var(--orange));transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
 .skill-card:hover::before{transform:scaleX(1);}
 .skill-card:hover{border-color:var(--slate2);transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.2);}
-.skill-icon{font-size:1.8rem;margin-bottom:14px;color:var(--blue-sky);}
-.skill-name{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1rem;margin-bottom:8px;}
-.skill-level{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--green);margin-bottom:14px;}
+.skill-icon{font-size:2.2rem;margin-bottom:14px;color:var(--blue-sky);animation:floatIcon 3s ease-in-out infinite;}
+.skill-name{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.1rem;margin-bottom:8px;}
+.skill-level{font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--green);margin-bottom:14px;}
 .skill-bar{height:3px;background:var(--border);border-radius:2px;overflow:hidden;}
 .skill-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--blue-sky),var(--orange));width:0;transition:width 1.2s ease;}
 .skill-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
-.skill-tag{font-size:0.7rem;font-family:'JetBrains Mono',monospace;color:var(--muted);background:rgba(30,52,92,0.6);padding:3px 8px;border-radius:4px;}
+.skill-tag{font-size:0.75rem;font-family:'JetBrains Mono',monospace;color:var(--muted);background:rgba(30,52,92,0.6);padding:3px 8px;border-radius:4px;}
 
 /* PROJECTS */
 .projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
 .project-card{background:var(--slate);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all 0.3s;}
 .project-card:hover{border-color:var(--blue-sky);transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,0.3);}
 .project-header{padding:28px 28px 0;}
-.project-status{font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;}
+.project-status{font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;}
 .status-progress{color:var(--blue-sky);}
 .status-done{color:var(--green);}
-.project-title{font-family:'Forte', 'Bradley Hand ITC', 'Space Grotesk', sans-serif;font-weight:700;font-size:1.15rem;margin-bottom:10px;}
-.project-desc{font-size:0.88rem;color:var(--muted);line-height:1.7;margin-bottom:20px;}
+.project-title{font-family:'Forte', 'Bradley Hand ITC', 'Space Grotesk', sans-serif;font-weight:700;font-size:1.3rem;margin-bottom:10px;}
+.project-desc{font-size:0.98rem;color:var(--muted);line-height:1.7;margin-bottom:20px;}
 .project-stack{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px;}
-.stack-badge{font-family:'JetBrains Mono',monospace;font-size:0.7rem;padding:4px 10px;border-radius:4px;background:rgba(59,130,246,0.1);color:var(--blue-sky);border:1px solid rgba(59,130,246,0.25);}
+.stack-badge{font-family:'JetBrains Mono',monospace;font-size:0.75rem;padding:4px 10px;border-radius:4px;background:rgba(59,130,246,0.1);color:var(--blue-sky);border:1px solid rgba(59,130,246,0.25);}
 .project-footer{padding:18px 28px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
-.project-link{font-size:0.8rem;color:var(--orange);text-decoration:none;font-weight:500;display:flex;align-items:center;gap:6px;transition:gap 0.2s;}
+.project-link{font-size:0.9rem;color:var(--orange);text-decoration:none;font-weight:500;display:flex;align-items:center;gap:6px;transition:gap 0.2s;}
 .project-link:hover{gap:10px;color:var(--orange2);}
 
 /* EXPERIENCE */
 .timeline{position:relative;padding-left:32px;}
 .timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,var(--blue-sky),var(--green));}
 .timeline-item{position:relative;margin-bottom:40px;}
-.timeline-dot{position:absolute;left:-40px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--navy);border:2px solid var(--blue-sky);box-shadow:0 0 8px rgba(59,130,246,0.4);}
-.timeline-date{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--orange);margin-bottom:6px;letter-spacing:1px;}
-.timeline-role{font-family:'Forte', 'Bradley Hand ITC', 'Space Grotesk', sans-serif;font-weight:600;font-size:1rem;margin-bottom:4px;}
-.timeline-company{font-size:0.85rem;color:var(--green);margin-bottom:10px;}
-.timeline-desc{font-size:0.88rem;color:var(--muted);line-height:1.7;}
+.timeline-dot{position:absolute;left:-40px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--navy);border:2px solid var(--blue-sky);box-shadow:0 0 8px rgba(59,130,246,0.4);animation:pulseGlow 2s infinite;}
+.timeline-date{font-family:'JetBrains Mono',monospace;font-size:0.82rem;color:var(--orange);margin-bottom:6px;letter-spacing:1px;}
+.timeline-role{font-family:'Forte', 'Bradley Hand ITC', 'Space Grotesk', sans-serif;font-weight:600;font-size:1.1rem;margin-bottom:4px;}
+.timeline-company{font-size:0.95rem;color:var(--green);margin-bottom:10px;}
+.timeline-desc{font-size:0.98rem;color:var(--muted);line-height:1.7;}
 
 /* CERTS */
 .certs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
 .cert-card{background:var(--slate);border:1px solid var(--border);border-radius:10px;padding:22px;display:flex;gap:16px;align-items:flex-start;transition:all 0.3s;}
 .cert-card:hover{border-color:var(--green);transform:translateX(4px);}
-.cert-icon{font-size:1.5rem;flex-shrink:0;color:var(--blue-sky);}
-.cert-name{font-weight:600;font-size:0.9rem;margin-bottom:4px;}
-.cert-issuer{font-size:0.78rem;color:var(--muted);}
-.cert-year{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--orange);margin-top:6px;}
+.cert-icon{font-size:1.8rem;flex-shrink:0;color:var(--blue-sky);}
+.cert-name{font-weight:600;font-size:1rem;margin-bottom:4px;}
+.cert-issuer{font-size:0.85rem;color:var(--muted);}
+.cert-year{font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--orange);margin-top:6px;}
 
 /* CONTACT */
 .contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
-.contact-text p{color:var(--muted);line-height:1.8;margin-bottom:24px;font-size:0.95rem;}
+.contact-text p{color:var(--muted);line-height:1.8;margin-bottom:24px;font-size:1.05rem;}
 .contact-links{display:flex;flex-direction:column;gap:14px;}
 .contact-link{display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--slate);border:1px solid var(--border);border-radius:10px;text-decoration:none;color:var(--text);transition:all 0.3s;}
 .contact-link:hover{border-color:var(--green);transform:translateX(6px);box-shadow:0 0 20px rgba(16,185,129,0.1);}
-.contact-link-icon{font-size:1.2rem;width:28px;text-align:center;color:var(--orange);}
-.contact-link-label{font-size:0.78rem;color:var(--muted);display:block;}
-.contact-link-value{font-size:0.88rem;font-weight:500;}
+.contact-link-icon{font-size:1.3rem;width:28px;text-align:center;color:var(--orange);}
+.contact-link-label{font-size:0.85rem;color:var(--muted);display:block;}
+.contact-link-value{font-size:0.98rem;font-weight:500;}
 .contact-form{display:flex;flex-direction:column;gap:14px;}
-.form-input{background:var(--slate);border:1px solid var(--border);border-radius:8px;padding:14px 18px;color:var(--text);outline:none;transition:border-color 0.2s;font-family: 'Bradley Hand ITC', 'Forte', 'Inter', sans-serif;font-size:0.9rem;}
+.form-input{background:var(--slate);border:1px solid var(--border);border-radius:8px;padding:14px 18px;color:var(--text);outline:none;transition:border-color 0.2s;font-family: 'Bradley Hand ITC', 'Forte', 'Inter', sans-serif;font-size:1rem;}
 .form-input:focus{border-color:var(--blue-sky);}
 .form-input::placeholder{color:var(--muted);}
 textarea.form-input{resize:vertical;min-height:120px;}
 
 /* FOOTER */
-footer{text-align:center;padding:40px 48px;border-top:1px solid var(--border);font-size:0.8rem;color:var(--muted);font-family:'JetBrains Mono',monospace;}
+footer{text-align:center;padding:40px 48px;border-top:1px solid var(--border);font-size:0.85rem;color:var(--muted);font-family:'JetBrains Mono',monospace;}
 footer span{background:linear-gradient(135deg,var(--blue-sky),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 
 /* REVEAL & ANIMATIONS */
@@ -186,6 +189,8 @@ footer span{background:linear-gradient(135deg,var(--blue-sky),var(--green));-web
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 @keyframes rotateSlow{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+@keyframes pulseGlow{0%,100%{transform:scale(1);opacity:0.8;}50%{transform:scale(1.4);opacity:1;box-shadow:0 0 20px currentColor;}}
+@keyframes floatIcon{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
 
 /* RESPONSIVE */
 @media(max-width:900px){
@@ -195,7 +200,7 @@ footer span{background:linear-gradient(135deg,var(--blue-sky),var(--green));-web
   .projects-grid,.certs-grid{grid-template-columns:1fr;}
   nav{padding:16px 24px;}
   .nav-links{gap:20px;}
-  section{padding:70px 24px;}
+  section{padding:80px 24px;}
 }
 @media(max-width:600px){
   .skills-grid{grid-template-columns:1fr;}
@@ -256,6 +261,12 @@ footer span{background:linear-gradient(135deg,var(--blue-sky),var(--green));-web
 
 <!-- ABOUT -->
 <section id="about">
+  <div class="section-decoration">
+    <span class="pulse-dot"></span>
+    <span class="pulse-dot green"></span>
+    <span class="pulse-dot orange"></span>
+    <span class="line"></span>
+  </div>
   <div class="section-label">01 · About</div>
   <div class="section-title">Who I Am</div>
   <div class="about-grid reveal">
@@ -289,6 +300,10 @@ footer span{background:linear-gradient(135deg,var(--blue-sky),var(--green));-web
 <!-- SKILLS -->
 <section id="skills" style="background:rgba(19,35,63,0.3);max-width:100%;padding:100px 0;">
 <div style="max-width:1100px;margin:0 auto;padding:0 48px;">
+  <div class="section-decoration">
+    <i class="fas fa-rotate" style="color:var(--orange); font-size:1.2rem; animation:rotateSlow 6s linear infinite;"></i>
+    <span class="line" style="width:80px;"></span>
+  </div>
   <div class="section-label">02 · Skills</div>
   <div class="section-title">What I Work With</div>
   <div class="skills-grid reveal">
@@ -340,6 +355,10 @@ footer span{background:linear-gradient(135deg,var(--blue-sky),var(--green));-web
 
 <!-- PROJECTS -->
 <section id="projects">
+  <div class="section-decoration">
+    <i class="fas fa-terminal" style="color:var(--green); font-size:1.2rem; animation:floatIcon 2.5s ease-in-out infinite;"></i>
+    <span class="line" style="width:80px;"></span>
+  </div>
   <div class="section-label">03 · Projects</div>
   <div class="section-title">What I've Built</div>
   <div class="projects-grid reveal">
@@ -357,8 +376,8 @@ footer span{background:linear-gradient(135deg,var(--blue-sky),var(--green));-web
         </div>
       </div>
       <div class="project-footer">
-        <a href="https://github.com/Peace-ADIKEPETO/DE0-RISC-V-MCU.git" class="project-link"> View it here <i class="fas fa-arrow-right"></i></a>
-        <span style="font-size:0.75rem;color:var(--muted);font-family:'JetBrains Mono',monospace;">FPGA · Digital Design</span>
+        <a href="https://github.com/yourusername/risc-v-fpga" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+        <span style="font-size:0.8rem;color:var(--muted);font-family:'JetBrains Mono',monospace;">FPGA · Digital Design</span>
       </div>
     </div>
     <div class="project-card">
@@ -375,8 +394,8 @@ footer span{background:linear-gradient(135deg,var(--blue-sky),var(--green));-web
         </div>
       </div>
       <div class="project-footer">
-        <a href="https://github.com/Peace-ADIKEPETO/E-Sim.git" class="project-link">View it here <i class="fas fa-arrow-right"></i></a>
-        <span style="font-size:0.75rem;color:var(--muted);font-family:'JetBrains Mono',monospace;">C++ · Desktop</span>
+        <a href="https://github.com/yourusername/qt-circuit-simulator" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+        <span style="font-size:0.8rem;color:var(--muted);font-family:'JetBrains Mono',monospace;">C++ · Desktop</span>
       </div>
     </div>
     <div class="project-card">
@@ -391,8 +410,8 @@ footer span{background:linear-gradient(135deg,var(--blue-sky),var(--green));-web
         </div>
       </div>
       <div class="project-footer">
-        <a href="#" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
-        <span style="font-size:0.75rem;color:var(--muted);font-family:'JetBrains Mono',monospace;">C++ · Industrial</span>
+        <a href="https://github.com/yourusername/qr-motor-tool" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+        <span style="font-size:0.8rem;color:var(--muted);font-family:'JetBrains Mono',monospace;">C++ · Industrial</span>
       </div>
     </div>
     <div class="project-card">
@@ -406,8 +425,8 @@ footer span{background:linear-gradient(135deg,var(--blue-sky),var(--green));-web
         </div>
       </div>
       <div class="project-footer">
-        <a href="#" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
-        <span style="font-size:0.75rem;color:var(--muted);font-family:'JetBrains Mono',monospace;">C++ · Desktop</span>
+        <a href="https://github.com/yourusername/clock-agenda" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+        <span style="font-size:0.8rem;color:var(--muted);font-family:'JetBrains Mono',monospace;">C++ · Desktop</span>
       </div>
     </div>
   </div>
@@ -416,6 +435,10 @@ footer span{background:linear-gradient(135deg,var(--blue-sky),var(--green));-web
 <!-- EXPERIENCE -->
 <section id="experience" style="background:rgba(19,35,63,0.3);max-width:100%;padding:100px 0;">
 <div style="max-width:1100px;margin:0 auto;padding:0 48px;">
+  <div class="section-decoration">
+    <span class="pulse-dot" style="background:var(--green);"></span>
+    <span class="line" style="width:80px;"></span>
+  </div>
   <div class="section-label">04 · Experience</div>
   <div class="section-title">Where I've Worked</div>
   <div class="reveal">
@@ -441,6 +464,10 @@ footer span{background:linear-gradient(135deg,var(--blue-sky),var(--green));-web
 
 <!-- CERTIFICATIONS -->
 <section id="certifications">
+  <div class="section-decoration">
+    <i class="fas fa-award" style="color:var(--orange); font-size:1.2rem; animation:floatIcon 2.5s ease-in-out infinite;"></i>
+    <span class="line" style="width:80px;"></span>
+  </div>
   <div class="section-label">05 · Certifications</div>
   <div class="section-title">Credentials</div>
   <div class="certs-grid reveal">
@@ -482,11 +509,15 @@ footer span{background:linear-gradient(135deg,var(--blue-sky),var(--green));-web
 <!-- CONTACT -->
 <section id="contact" style="background:rgba(19,35,63,0.3);max-width:100%;padding:100px 0;">
 <div style="max-width:1100px;margin:0 auto;padding:0 48px;">
+  <div class="section-decoration">
+    <i class="fas fa-envelope" style="color:var(--blue-sky); font-size:1.2rem; animation:floatIcon 2.5s ease-in-out infinite;"></i>
+    <span class="line" style="width:80px;"></span>
+  </div>
   <div class="section-label">06 · Contact</div>
   <div class="section-title">Get In Touch</div>
   <div class="contact-inner reveal">
     <div>
-      <p class="contact-text" style="color:var(--muted);line-height:1.8;margin-bottom:28px;font-size:0.95rem;">Open to remote internship opportunities, freelance projects, and international collaboration — especially in FPGA design, embedded systems, and Qt/C++ desktop development. Let's build something together.</p>
+      <p class="contact-text" style="color:var(--muted);line-height:1.8;margin-bottom:28px;font-size:1.05rem;">Open to remote internship opportunities, freelance projects, and international collaboration — especially in FPGA design, embedded systems, and Qt/C++ desktop development. Let's build something together.</p>
       <div class="contact-links">
         <a href="mailto:peaceadikpeto@gmail.com" class="contact-link">
           <span class="contact-link-icon"><i class="fas fa-envelope"></i></span>
@@ -496,7 +527,7 @@ footer span{background:linear-gradient(135deg,var(--blue-sky),var(--green));-web
           <span class="contact-link-icon"><i class="fab fa-linkedin-in"></i></span>
           <div><span class="contact-link-label">LinkedIn</span><span class="contact-link-value">Peace Georland ADIKPETO</span></div>
         </a>
-        <a href="https://github.com/yourusername" class="contact-link" target="_blank">
+        <a href="https://github.com/Peace-ADIKEPETO" class="contact-link" target="_blank">
           <span class="contact-link-icon"><i class="fab fa-github"></i></span>
           <div><span class="contact-link-label">GitHub</span><span class="contact-link-value">github.com/yourusername</span></div>
         </a>
@@ -507,13 +538,14 @@ footer span{background:linear-gradient(135deg,var(--blue-sky),var(--green));-web
       </div>
     </div>
     <div>
-      <div class="contact-form">
-        <input class="form-input" type="text" placeholder="Your Name"/>
-        <input class="form-input" type="email" placeholder="Your Email"/>
-        <input class="form-input" type="text" placeholder="Subject"/>
-        <textarea class="form-input" placeholder="Your message..."></textarea>
-        <button class="btn btn-primary" style="align-self:flex-start;padding:14px 32px;">Send Message <i class="fas fa-arrow-right"></i></button>
-      </div>
+      <!-- ===== CONTACT FORM WITH FORMSPREE ===== -->
+      <form class="contact-form" action="https://formspree.io/f/mojowglw" method="POST">
+        <input class="form-input" type="text" name="name" placeholder="Your Name" required/>
+        <input class="form-input" type="email" name="email" placeholder="Your Email" required/>
+        <input class="form-input" type="text" name="subject" placeholder="Subject" required/>
+        <textarea class="form-input" name="message" placeholder="Your message..." required></textarea>
+        <button type="submit" class="btn btn-primary" style="align-self:flex-start;padding:14px 32px;">Send Message <i class="fas fa-arrow-right"></i></button>
+      </form>
     </div>
   </div>
 </div>
@@ -525,7 +557,7 @@ footer span{background:linear-gradient(135deg,var(--blue-sky),var(--green));-web
 </footer>
 
 <script>
-// PCB Canvas animation
+// PCB Canvas animation (Your existing script)
 const canvas = document.getElementById('pcbCanvas');
 const ctx = canvas.getContext('2d');
 let traces = [], dots = [], W, H, animFrame;
@@ -591,7 +623,7 @@ function animate(){
 window.addEventListener('resize',resize);
 resize();animate();
 
-// Auto-rotate hero photos (fade effect)
+// Auto-rotate hero photos
 const slides = document.querySelectorAll('#photoCarousel .slide');
 if (slides.length > 0) {
   let current = 0;
